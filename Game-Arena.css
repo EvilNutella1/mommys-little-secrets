@@ -1,0 +1,60 @@
+body {
+    height: 300px;
+}
+
+#minigame {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.8em;
+}
+
+#nutellaEmoji {
+    font-size: 2em;
+    position: absolute;
+    cursor: pointer;
+    animation: moveNutella 1s ease-in-out infinite alternate;
+}
+
+#timerbox {
+    width: 500px;
+    height: 7px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+#timer {
+    width: 0%;
+    height: 100%;
+    background-color: red;
+    animation: fullen 60s linear forwards;
+}
+
+#timerflex {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes fullen {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes moveNutella {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(10px);
+    }
+}
