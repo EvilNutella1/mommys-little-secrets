@@ -55,28 +55,41 @@
                 <h1 id="h1"> Good to know:</h1>
                 <div id="listen">
                     <ul id="ul">
-                        <a href="">
-                            <li>Best Mudea Catchers!</li>
-                        </a>
-                        <a href="">
-                            <li>Most Spoticord connection🎵</li>
-                        </a>
-                        <a href="">
-                            <li>Movie Time🍿</li>
-                        </a>
-                        <a href="">
-                            <li>Best Confessions of all time!</li>
-                        </a>
+                        <li>
+                            <a href="#" id="mudea-alert" class="green">
+                                Best Mudea Catchers!
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" id="spoticord-alert" class="green">
+                                Most Spoticord connection🎵
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" id="movie-alert" class="green">
+                                Movie Time🍿
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" id="Confession-alert" class="green">
+                                Best Confessions of all time!
+                            </a>
+                        </li>
                     </ul>
                     <div>
                         <ul id="ul2">
-                            <a href="">
-                                <li>Events</li>
-                            </a>
+                            <li>
+                                <a href="#" id="events-alert" class="green">
+                                    Events
+                                </a>
+                            </li>
                         </ul>
                         <div id="verify">
                             <input id="password" type="password" placeholder="Admin-Password">
-                            <button onclick="checkPassword()">verify</button>
+                            <button id="verify-button">verify</button>
                         </div>
                     </div>
                 </div>
@@ -85,15 +98,15 @@
 
         <footer>
             <div id="links">
-                <a href="#"><strong class="farbe"> Rules</strong></a>
+                <a href="#" id="rules-alert"><strong class="farbe"> Rules</strong></a>
             </div>
 
             <div>
-                <a href="#"><strong class="farbe" onclick="">Contact</strong></a>
+                <a href="#" id="contact"><strong class="farbe">Contact</strong></a>
             </div>
 
             <div id="rechts">
-                <a href="#"><strong class="farbe">Game Arena</strong></a>
+                <a href="Game-Arena.html"><strong class="farbe">Game Arena</strong></a>
             </div>
         </footer>
     </div>
@@ -102,32 +115,45 @@
             <h1 style="text-decoration: 1px solid underline;">Administrator Panel</h1>
             <div id="mudea">
                 <h3>Mudea Catchers Update</h3>
-                <input type="text" placeholder="Write the information..." id="mudeainfos">
-                <button onclick="updateMudeaAlert()">enter</button>
+                <textarea name="" type="text" placeholder="Write the information..." id="mudeainfos"
+                    class="box-size"></textarea> <br>
+                <button id="mudea-save">enter</button>
             </div>
 
             <div style="border-bottom: 1px solid lightgray; margin-top: 25px;"></div>
 
             <div id="spoticord">
                 <h3>Spoticord connections Update</h3>
-                <input type="text" placeholder="Write the information..." id="spoticordInfos">
-                <button onclick="updateSpoticordAlter()">enter</button>
+                <textarea name="" type="text" placeholder="Write the information..." id="spoticordInfos"
+                    class="box-size"></textarea> <br>
+                <button id="spoticord-save">enter</button>
             </div>
 
             <div style="border-bottom: 1px solid lightgray; margin-top: 25px;"></div>
 
             <div id="movietime">
                 <h3>Movie Time Update</h3>
-                <input type="text" placeholder="Write the information..." id="movieinfos">
-                <button onclick="updateMovieAlert()">enter</button>
+                <textarea name="" type="text" placeholder="Write the information..." id="movieinfos"
+                    class="box-size"></textarea> <br>
+                <button id="movie-save">enter</button>
             </div>
 
             <div style="border-bottom: 1px solid lightgray; margin-top: 25px;"></div>
 
             <div id="Events">
                 <h3>Events Update</h3>
-                <input type="text" placeholder="Write the information..." id="eventinfos">
-                <button onclick="updateEventsAlert()">enter</button>
+                <textarea name="" type="text" placeholder="Write the information..." id="eventinfos"
+                    class="box-size"></textarea> <br>
+                <button id="events-save">enter</button>
+            </div>
+
+             <div style="border-bottom: 1px solid lightgray; margin-top: 25px;"></div>
+
+            <div id="rules">
+                <h3>Rules Update</h3>
+                <textarea name="" type="text" id="rulesinfos" placeholder="Write the information..."
+                    class="box-size"></textarea> <br>
+                    <button id="rules-save">enter</button>
             </div>
 
         </div>
@@ -136,7 +162,7 @@
         ©EvilNutella | Website by EvilNutella
     </div>
 
-     <script type="module" src="mommys-little-secrets.js"></script>
+    <script type="module" src="mommys-little-secrets.js"></script>
 </body>
 
 </html>
