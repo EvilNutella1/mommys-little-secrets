@@ -109,7 +109,6 @@ function setupLiveAlerts() {
         onSnapshot(docRef, (docSnap) => {
             if (docSnap.exists()) {
                 currentText = docSnap.data().text || '';
-                linkElem.title = currentText;
             } else {
                 currentText = "";
                 linkElem.removeAttribute('title');
@@ -207,4 +206,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Debug output
     console.log("mommys-little-secrets.js (module) loaded successfully!");
 });
+
 
