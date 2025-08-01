@@ -25,10 +25,18 @@ async function saveToFirestore(docName, text) {
             text: text,
             timestamp: new Date()
         });
-        alert(`${docName} update saved successfully!`);
+        Swal.fire({
+            icon: "success",
+            title: "Update saved!",
+            text: `${docName} update saved successfully!`
+        });
     } catch (error) {
         console.error("Error saving:", error);
-        alert("Error saving update!");
+        Swal.fire({
+            icon: "error",
+            title: "Error!",
+            text: "Error saving update!"
+        });
     }
 }
 
@@ -62,10 +70,18 @@ function handlePasswordLogin() {
     signInWithEmailAndPassword(auth, HARDCODED_EMAIL, password)
         .then(() => {
             adminSection.style.display = "block";
-            alert("✔️ Login successful!");
+            Swal.fire({
+                icon: "success",
+                title: "Login successful!",
+                html: "✔️ You are now logged in as admin."
+            });
         })
         .catch((error) => {
-            alert("❌ Wrong password!");
+            Swal.fire({
+                icon: "error",
+                title: "Wrong password!",
+                html: "❌ Please try again."
+            });
             console.error("Login error:", error);
         });
 }
@@ -101,12 +117,20 @@ function setupLiveAlerts() {
         });
 
         // Click handler for alert
-        linkElem.addEventListener('click', function(event) {
+        linkElem.addEventListener('click', function (event) {
             event.preventDefault();
             if (currentText) {
-                alert(currentText);
+                Swal.fire({
+                    icon: "info",
+                    title: "Update",
+                    html: currentText.replace(/\n/g, "<br>")
+                });
             } else {
-                alert("No update available.");
+                Swal.fire({
+                    icon: "warning",
+                    title: "No update available.",
+                    html: ""
+                });
             }
         });
     });
@@ -117,9 +141,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Contact link
     const contactLink = document.getElementById('contact');
     if (contactLink) {
-        contactLink.addEventListener('click', function(event) {
+        contactLink.addEventListener('click', function (event) {
             event.preventDefault();
-            alert('If you have questions or helpful requests about this website,\nplease contact me via Discord:\n✉ Veganlife\n\nor via Instagram:\n✉ EvilNutellaaa');
+            Swal.fire({
+                icon: "info",
+                title: "Contact",
+                html: 'If you have questions or helpful requests about this website,<br>please contact me via Discord:<br>✉ Veganlife<br><br>or via Instagram:<br>✉ EvilNutellaaa'
+            });
         });
     }
 
