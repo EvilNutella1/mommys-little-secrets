@@ -122,7 +122,6 @@ function setupLiveAlerts() {
             if (currentText) {
                 Swal.fire({
                     icon: "info",
-                    title: "Update",
                     html: currentText.replace(/\n/g, "<br>")
                 });
             } else {
@@ -208,3 +207,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Debug output
     console.log("mommys-little-secrets.js (module) loaded successfully!");
 });
+
