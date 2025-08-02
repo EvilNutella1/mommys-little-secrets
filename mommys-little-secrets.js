@@ -47,7 +47,8 @@ async function loadContent() {
         { key: 'spoticord', inputId: 'spoticordInfos' },
         { key: 'movietime', inputId: 'movieinfos' },
         { key: 'events', inputId: 'eventinfos' },
-        { key: 'rules', inputId: 'rulesinfos' } // Added rules
+        { key: 'rules', inputId: 'rulesinfos' },
+        { key: 'Confessions', inputId: 'confessioninfo'}
     ];
     for (const section of sections) {
         const docSnap = await getDoc(doc(db, "updates", section.key));
@@ -69,7 +70,7 @@ function handlePasswordLogin() {
 
     signInWithEmailAndPassword(auth, HARDCODED_EMAIL, password)
         .then(() => {
-            adminSection.style.display = "block";
+            adminSection.style.display = "flex";
             Swal.fire({
                 icon: "success",
                 title: "Login successful!",
@@ -94,7 +95,8 @@ function setupLiveAlerts() {
         { docName: 'spoticord', linkId: 'spoticord-alert' },
         { docName: 'movietime', linkId: 'movie-alert' },
         { docName: 'events', linkId: 'events-alert' },
-        { docName: 'rules', linkId: 'rules-alert' } // Added rules
+        { docName: 'rules', linkId: 'rules-alert' },
+        { docName: 'Confessions', linkId: 'Confession-alert' }
     ];
 
     alertLinks.forEach(({ docName, linkId }) => {
@@ -180,6 +182,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const confessionBtn = document.getElementById('confession-save');
+    if (confessionBtn) {
+        confessionBtn.addEventListener('click', () => {
+            const text = document.getElementById('confessioninfo').value;
+            saveToFirestore('Confessions', text);
+        });
+    }
+
     const eventsBtn = document.getElementById('events-save');
     if (eventsBtn) {
         eventsBtn.addEventListener('click', () => {
@@ -206,5 +216,3 @@ document.addEventListener('DOMContentLoaded', () => {
     // Debug output
     console.log("mommys-little-secrets.js (module) loaded successfully!");
 });
-
-
